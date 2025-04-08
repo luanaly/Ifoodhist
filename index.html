@@ -8,18 +8,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background: #fff5ec;
       color: #333;
+      transition: all 0.3s ease-in-out;
     }
+    /* Menu fixo */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #ea1d2c;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcccb;
+    }
+
     header {
       background: #ea1d2c;
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px 60px;
       text-align: center;
-      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -42,6 +68,15 @@
       padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     h2 {
       color: #ea1d2c;
@@ -78,6 +113,23 @@
       background: #ea1d2c;
       color: white;
     }
+
+    /* Botão voltar ao topo */
+    #voltar-topo {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ea1d2c;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -85,83 +137,88 @@
       section {
         padding: 20px;
       }
+      nav {
+        flex-wrap: wrap;
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Menu -->
+  <nav>
+    <a href="#historia">História</a>
+    <a href="#segmento">Segmento</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#publico">Público-Alvo</a>
+    <a href="#8ps">8 Ps</a>
+  </nav>
+
+  <!-- Cabeçalho -->
   <header>
     <h1>Descubra o Universo iFood</h1>
     <p>Mais que delivery, uma revolução no seu dia a dia!</p>
   </header>
 
-  <section>
+  <!-- Conteúdo principal -->
+  <section id="historia">
     <h2>História</h2>
     <p>Fundado em 2011, o iFood começou como uma ideia inovadora de conectar pessoas aos seus restaurantes favoritos de forma simples e digital. Com o tempo, tornou-se a maior plataforma de delivery da América Latina, revolucionando o setor alimentício com tecnologia, agilidade e experiência de usuário.</p>
+  </section>
 
+  <section id="segmento">
     <h2>Segmento</h2>
     <p>O iFood atua no segmento de delivery de alimentos, incluindo refeições prontas, bebidas, supermercado e farmácia, promovendo a conexão entre consumidores e estabelecimentos comerciais de forma eficiente.</p>
+  </section>
 
+  <section id="produtos">
     <h2>Principais Produtos e Serviços</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Delivery de Restaurantes">
+        <img src="https://images.unsplash.com/photo-1556912167-f556f1f39df4?auto=format&fit=crop&w=1200&q=80" alt="Delivery de Restaurantes">
         <h3>Delivery de Restaurantes</h3>
         <p>Comida de diversos tipos entregue onde você estiver.</p>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1586201375761-83865001e17b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mercado e Farmácia">
+        <img src="https://images.unsplash.com/photo-1606811841315-0c4c3e7d65b4?auto=format&fit=crop&w=1200&q=80" alt="Mercado e Farmácia">
         <h3>Mercado e Farmácia</h3>
         <p>Compra de itens de mercado e produtos de farmácia com praticidade.</p>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1613145991451-3a8e0e7450c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="iFood Benefícios">
+        <img src="https://images.unsplash.com/photo-1600891964015-00bedc19b122?auto=format&fit=crop&w=1200&q=80" alt="iFood Benefícios">
         <h3>iFood Benefícios</h3>
         <p>Serviços para empresas oferecerem alimentação aos funcionários.</p>
       </div>
     </div>
+  </section>
 
+  <section id="publico">
     <h2>Público-Alvo</h2>
     <p>Pessoas entre 18 e 45 anos, urbanas, conectadas e que buscam praticidade, economia de tempo e variedade nas refeições, além de empresas que oferecem benefícios alimentares aos funcionários.</p>
+  </section>
 
+  <section id="8ps">
     <h2>Os 8Ps do iFood</h2>
     <div class="cards">
-      <div class="card">
-        <h3>Produto</h3>
-        <p>Serviços digitais de entrega com foco em alimentação e conveniência.</p>
-      </div>
-      <div class="card">
-        <h3>Preço</h3>
-        <p>Competitivo, com promoções, cupons e parcerias acessíveis.</p>
-      </div>
-      <div class="card">
-        <h3>Praça</h3>
-        <p>Disponível em milhares de cidades no Brasil e expandindo constantemente.</p>
-      </div>
-      <div class="card">
-        <h3>Promoção</h3>
-        <p>Campanhas criativas, influenciadores e publicidade digital.</p>
-      </div>
-      <div class="card">
-        <h3>Pessoas</h3>
-        <p>Equipe inovadora, entregadores parceiros e atendimento rápido.</p>
-      </div>
-      <div class="card">
-        <h3>Processos</h3>
-        <p>Aplicativo intuitivo, pedidos em tempo real, logística inteligente.</p>
-      </div>
-      <div class="card">
-        <h3>Posicionamento</h3>
-        <p>Líder em delivery, referência em inovação e qualidade.</p>
-      </div>
-      <div class="card">
-        <h3>Performance</h3>
-        <p>Alta taxa de satisfação e crescimento constante no mercado.</p>
-      </div>
+      <div class="card"><h3>Produto</h3><p>Serviços digitais de entrega com foco em alimentação e conveniência.</p></div>
+      <div class="card"><h3>Preço</h3><p>Competitivo, com promoções, cupons e parcerias acessíveis.</p></div>
+      <div class="card"><h3>Praça</h3><p>Disponível em milhares de cidades no Brasil e expandindo constantemente.</p></div>
+      <div class="card"><h3>Promoção</h3><p>Campanhas criativas, influenciadores e publicidade digital.</p></div>
+      <div class="card"><h3>Pessoas</h3><p>Equipe inovadora, entregadores parceiros e atendimento rápido.</p></div>
+      <div class="card"><h3>Processos</h3><p>Aplicativo intuitivo, pedidos em tempo real, logística inteligente.</p></div>
+      <div class="card"><h3>Posicionamento</h3><p>Líder em delivery, referência em inovação e qualidade.</p></div>
+      <div class="card"><h3>Performance</h3><p>Alta taxa de satisfação e crescimento constante no mercado.</p></div>
     </div>
   </section>
 
+  <!-- Botão Voltar ao Topo -->
+  <button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Topo</button>
+
+  <!-- Rodapé -->
   <footer>
     <p>© 2025 iFood - Alimentando o futuro com inovação</p>
   </footer>
+
 </body>
 </html>
