@@ -1,95 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trabalho iFood</title>
+  <title>iFood - Inovação em Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      box-sizing: border-box;
     }
-    header, footer {
-      background-color: #ea1d2c;
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff5ec;
+      color: #333;
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #ea1d2c;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffe5e0;
+    }
+    header {
+      background: linear-gradient(rgba(234, 29, 44, 0.8), rgba(234, 29, 44, 0.8)), url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 1em 0;
+      padding: 120px 20px 60px;
     }
-    main {
-      padding: 20px;
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
     }
     section {
-      margin-bottom: 40px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
     h2 {
+      font-size: 2rem;
       color: #ea1d2c;
+      margin-bottom: 20px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: inside square;
+    }
+    footer {
+      background: #ea1d2c;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    #voltar-topo {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ea1d2c;
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>iFood - Análise Completa</h1>
-  </header>
 
-  <main>
-    <section>
-      <h2>História do iFood</h2>
-      <p>O iFood é uma empresa brasileira que revolucionou o mercado de delivery de alimentos na América Latina. Sua trajetória começou em 1997 com a criação da Disk Cook, um guia impresso de cardápios que permitia aos clientes realizarem pedidos por telefone. Em 2011, a empresa migrou para o ambiente digital e foi rebatizada como iFood, fundada por Patrick Sigrist, Eduardo Baer, Guilherme Bonifácio e Felipe Fioravante. Desde então, o iFood tem investido continuamente em tecnologia e inovação, consolidando-se como líder no segmento de delivery no Brasil.</p>
-    </section>
+<nav>
+  <a href="#historia">História</a>
+  <a href="#segmento">Segmento</a>
+  <a href="#produtos">Produtos</a>
+  <a href="#publico">Público</a>
+  <a href="#inovador">Inovação</a>
+  <a href="#8ps">8Ps</a>
+</nav>
 
-    <section>
-      <h2>Segmento de Atuação</h2>
-      <p>O iFood opera no segmento de delivery de alimentos, conectando consumidores a restaurantes, supermercados e farmácias. A plataforma facilita pedidos de refeições prontas, compras de mercado e produtos farmacêuticos, oferecendo conveniência e agilidade aos usuários.</p>
-    </section>
+<header>
+  <h1>Explore o Universo iFood</h1>
+  <p>Mais que delivery, uma revolução na forma como vivemos e nos alimentamos!</p>
+</header>
 
-    <section>
-      <h2>Principais Produtos e Serviços</h2>
-      <ul>
-        <li><strong>Delivery de Restaurantes:</strong> pedidos de refeições de uma ampla variedade de restaurantes parceiros.</li>
-        <li><strong>iFood Mercado:</strong> compras em supermercados com entrega rápida.</li>
-        <li><strong>iFood Farmácia:</strong> compra de medicamentos e produtos de saúde.</li>
-        <li><strong>iFood Benefícios:</strong> benefícios flexíveis para empresas e colaboradores.</li>
-      </ul>
-    </section>
+<section id="historia">
+  <h2>História</h2>
+  <p>O iFood surgiu em 2011 com a missão de transformar o modo como as pessoas pedem comida. Fundado em São Paulo, começou como um site de pedidos e evoluiu rapidamente para aplicativo, acompanhando a ascensão dos smartphones. Em poucos anos, se tornou líder no mercado de delivery da América Latina. A empresa expandiu sua atuação para além de refeições prontas, oferecendo também entregas de supermercado, farmácia, bebidas e até benefícios corporativos. A inovação tecnológica, o foco na experiência do cliente e a adaptação às necessidades do consumidor tornaram o iFood referência em delivery e tecnologia.</p>
+</section>
 
-    <section>
-      <h2>Região de Operação</h2>
-      <p>O iFood está presente em mais de 1.500 cidades no Brasil, atendendo uma vasta gama de clientes e estabelecimentos. A empresa continua expandindo sua presença.</p>
-    </section>
+<section id="segmento">
+  <h2>Segmento</h2>
+  <p>O iFood atua no setor de tecnologia e alimentação, sendo classificado como uma plataforma de delivery digital. Sua atuação abrange o segmento de marketplaces de entrega, conectando clientes, restaurantes, supermercados, farmácias e entregadores em uma experiência integrada, ágil e digital.</p>
+</section>
 
-    <section>
-      <h2>Público-Alvo</h2>
-      <p>Pessoas que buscam conveniência, variedade e rapidez na aquisição de alimentos e produtos. Também atende empresas com soluções como o iFood Benefícios.</p>
-    </section>
+<section id="produtos">
+  <h2>Principais Produtos e Serviços</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80" alt="Restaurantes">
+      <h3>Delivery de Restaurantes</h3>
+      <p>Conectando pessoas a milhares de restaurantes com rapidez e praticidade.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606811841315-0c4c3e7d65b4?auto=format&fit=crop&w=1200&q=80" alt="Mercado e Farmácia">
+      <h3>Mercado e Farmácia</h3>
+      <p>Entregas rápidas de produtos essenciais e itens de farmácia, direto à porta.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600891964015-00bedc19b122?auto=format&fit=crop&w=1200&q=80" alt="Benefícios">
+      <h3>iFood Benefícios</h3>
+      <p>Serviços para empresas fornecerem vales-alimentação e refeição via app.</p>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Serviço Digital Inovador: iFood Benefícios</h2>
-      <p>O iFood Benefícios transforma a forma como empresas oferecem benefícios. Inclui vales-refeição e alimentação, créditos para mobilidade, cultura, home office, educação, saúde e bem-estar. Essa flexibilidade permite maior satisfação e engajamento dos colaboradores.</p>
-    </section>
+<section id="publico">
+  <h2>Público-Alvo</h2>
+  <p>O iFood atende principalmente consumidores entre 18 e 45 anos, que vivem em áreas urbanas, são conectados digitalmente, valorizam conveniência e tempo. Também atende empresas que contratam benefícios alimentares para colaboradores. O app é voltado para todos os públicos, oferecendo acessibilidade e diversas formas de pagamento.</p>
+</section>
 
-    <section>
-      <h2>Mix de Marketing Digital (8 Ps)</h2>
-      <ul>
-        <li><strong>Produto:</strong> plataforma digital com entrega de comida, mercado e farmácia.</li>
-        <li><strong>Preço:</strong> estratégia competitiva com promoções, cupons e fidelidade.</li>
-        <li><strong>Praça:</strong> presença em mais de 1.500 cidades no Brasil.</li>
-        <li><strong>Promoção:</strong> campanhas criativas, influenciadores e redes sociais.</li>
-        <li><strong>Pessoas:</strong> foco na experiência do cliente, com suporte e parcerias sólidas.</li>
-        <li><strong>Processos:</strong> uso de tecnologia para eficiência e boa experiência.</li>
-        <li><strong>Posicionamento:</strong> líder de mercado, com inovação e qualidade.</li>
-        <li><strong>Performance:</strong> monitoramento contínuo de indicadores e melhorias.</li>
-      </ul>
-    </section>
-  </main>
+<section id="inovador">
+  <h2>Serviço Inovador: iFood Labs</h2>
+  <p>O iFood Labs é o braço de inovação da empresa, responsável por testar novas tecnologias como entregas por drones, inteligência artificial para recomendações personalizadas e entregas sustentáveis com bikes elétricas. Essa frente posiciona o iFood à frente da concorrência e como agente transformador no delivery digital.</p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Trabalho Acadêmico - iFood</p>
-  </footer>
+<section id="8ps">
+  <h2>Os 8Ps do iFood</h2>
+  <div class="cards">
+    <div class="card"><h3>Produto</h3><p>App de delivery completo com funcionalidades como rastreamento, promoções, e benefícios corporativos.</p></div>
+    <div class="card"><h3>Preço</h3><p>Modelos variados com preços competitivos, promoções, cupons e cashback.</p></div>
+    <div class="card"><h3>Praça</h3><p>Atuação nacional e presença em mais de 1.700 cidades brasileiras.</p></div>
+    <div class="card"><h3>Promoção</h3><p>Marketing digital com influenciadores, campanhas regionais e programas de fidelidade.</p></div>
+    <div class="card"><h3>Pessoas</h3><p>Equipes focadas em tecnologia, suporte, entregadores e atendimento ao cliente.</p></div>
+    <div class="card"><h3>Processos</h3><p>Plataforma automatizada com IA, otimização de rotas e integrações com estabelecimentos.</p></div>
+    <div class="card"><h3>Posicionamento</h3><p>Líder em delivery, referência em conveniência e inovação no mercado latino-americano.</p></div>
+    <div class="card"><h3>Performance</h3><p>Alta taxa de satisfação, crescimento contínuo, premiações e liderança no setor.</p></div>
+  </div>
+</section>
+
+<button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
+
+<footer>
+  <p>© 2025 iFood - Alimentando o futuro com tecnologia</p>
+</footer>
+
 </body>
-
 </html>
